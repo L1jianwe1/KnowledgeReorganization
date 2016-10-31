@@ -1,0 +1,23 @@
+
+
+function xmlhttp() {
+  var xhr;
+  
+  if (window.XMLHttpRequest) {
+    xhr = new XMLHttpRequest() ;
+  }else {
+    //code for ie6,ie5
+    
+    xhr = new ActiveXObject("Microsoft.XMLHttp");
+    
+  }
+  
+  xhr.onreadystatechange = function () {
+    if (xhr.readystate == 4 && xhr.status == 200) {
+      //....
+    }
+    
+    xhr.open("GET",url,true);
+    xhr.send();
+  }
+}
