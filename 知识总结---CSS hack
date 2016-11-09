@@ -1,0 +1,57 @@
+
+今天面试时，遇到了一个写css hack的题。以前也看到过但是忘记了。所以今天来整理一下。
+
+
+闲话不多说，首先什么是css hack呢？
+  不同的浏览器或者浏览器版本不同，对css的支持、解析就有所不同。导致页面效果不一样。而css hack就是用来解决这个问题。而这个针对不同的浏览器及不同的版本写相应代码的过程，就叫做css hack.主要用来针对ie浏览器不同版本之间的表现差异而引入。
+css hack 分类
+  1.属性hack
+  2.选择器hack
+  3.ie条件注释hack
+  
+属性hack：
+_：
+选择IE6及以下。连接线（中划线）（-）亦可使用，为了避免与某些带中划线的属性混淆，所以使用下划线（_）更为合适。
+*：
+选择IE7及以下。诸如：（+）与（#）之类的均可使用，不过业界对（*）的认知度更高
+\9：
+选择IE6+
+\0：
+选择IE8+和Opera15以下的浏览器
+\9\0：选择IE9、IE10.
+
+
+选择器hack：
+*html *前缀只对IE6生效
+*+html *+前缀只对IE7生效
+@media screen\9{...}只对IE6/7生效
+@media \0screen {body { background: red; }}只对IE8有效
+@media \0screen\,screen\9{body { background: blue; }}只对IE6/7/8有效
+@media screen\0 {body { background: green; }} 只对IE8/9/10有效
+@media screen and (min-width:0\0) {body { background: gray; }} 只对IE9/10有效
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }} 只对IE10有效
+
+
+ie条件注释hack：
+	只在IE下生效
+	<!--[if IE]>
+	<![endif]-->
+	
+	只在IE6下生效
+	<!--[if IE 6]>
+	<![endif]-->
+	
+	只在IE6以上版本生效
+	<!--[if gte IE 6]>
+	<![endif]-->
+	
+	只在IE8上不生效
+	<!--[if ! IE 8]>
+	<![endif]-->
+	
+	非IE浏览器生效
+	<!--[if !IE]>
+	<![endif]-->
+
+
+  
