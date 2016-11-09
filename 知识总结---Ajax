@@ -21,3 +21,15 @@ function xmlhttp() {
     xhr.send();
   }
 }
+
+
+
+ajax跨域问题的解决方案
+
+1.通过中间过渡层解决跨域问题
+  
+
+2.通过<script>标签解决跨域问题
+    凡是拥有"src"这个属性的标签都拥有跨域的能力，比如<script>、<img>、<iframe>
+
+3.使用jquery的jsonp来实现跨域访问
