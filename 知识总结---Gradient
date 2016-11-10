@@ -1,0 +1,79 @@
+css3 Gradient 渐变
+
+为了很好的使用渐变，需要先了解一下常用浏览器内核
+    Mozilla（Gecko）（熟悉的有Firefox，Flock等浏览器）
+    WebKit（熟悉的有Safari、Chrome等浏览器）
+    Opera(presto)（Opera浏览器）
+    Trident（IE浏览器）
+
+
+渐变分为：
+  线性渐变：linear-gradient
+  径向渐变：radial-gradient
+  
+  
+  
+线性渐变linear-gradient
+  语法：
+      mozilla:-moz-linear-gradient( [<point> || <angle>,]? <stop>, <stop> [, <stop>]* )
+              第一个参数：线性渐变方向，top--上到下、left--左到右、left top --左上到右下
+              第二个参数：起点颜色
+                  ——————中间可插入多个颜色，表示多个颜色的渐变
+              第三个参数：终点颜色
+              
+      webkit:-webkit-linear-gradient( [<point> || <angle>,]? <stop>, <stop> [, <stop>]* )//新
+              和mozilla基本一致
+              
+              -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*)//旧
+              第一个参数：渐变类型type----linear/radial
+              第二个参数：渐变起点（两个值，可以说坐标或关键值）
+              第三个参数：渐变终点（两个值，可以说坐标或关键值）
+              第四个参数：起点颜色（两个值，第一个位置0为起点，0.5为中点，1为结束点，第二个颜色）
+              第五个参数：终点颜色（两个值，第一个位置0为起点，0.5为中点，1为结束点，第二个颜色）
+              例：-webkit-gradient（linear,center top,center bottom,from(#ccc), to(#000)）
+              
+      opera:-o-linear-gradient([<point> || <angle>,]? <stop>, <stop> [, <stop>])
+              第一个参数：线性渐变方向，top--上到下、left--左到右、left top --左上到右下
+              第二个参数：起点颜色
+                  ——————中间可插入多个颜色，表示多个颜色的渐变
+              第三个参数：终点颜色    
+              
+      ie:filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB);/*IE<9>*/
+         -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB)";/*IE8+*/
+              startColorstr:起点颜色
+              endColorstr:终点颜色
+              GradientType:渐变类型,0表示垂直渐变，1表示水平渐变
+              
+ 渐变可以使用角度
+      --例：background: linear-gradient(angle, color-stop1, color-stop2)  0deg下到上，90deg左到右
+ 渐变可以用透明度 
+      --例：background: -webkit-linear-gradient(right,rgba(255,255,255,0)，rgba(255,255,255,1)）
+ 渐变可以重复
+      --例：repeating-linear-gradient() 
+      
+      
+径向渐变radial-gradient
+  语法：background: radial-gradient(center, shape size, start-color, ..., last-color)
+       例：  background: -webkit-radial-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+             background: -o-radial-gradient(red, green, blue); /* Opera 11.6 - 12.0 */
+             background: -moz-radial-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+             background: radial-gradient(red, green, blue); /* 标准的语法 */
+        渐变颜色位置：
+             例：background: radial-gradient(red 5%, green 15%, blue 60%)
+        渐变形状：
+             例：background: radial-gradient(circle, red, yellow, green)
+        渐变size尺寸：
+             closest-side:
+             farthest-side:
+             closest-corner:
+             farthest-corner:默认值
+             例:background: radial-gradient(60% 55%, farthest-side,blue,green,yellow,black）
+         重复渐变：
+             repeating-radial-gradient()
+             例：background: repeating-radial-gradient(red, yellow 10%, green 15%)
+      
+      
+      
+             
+              
+          
