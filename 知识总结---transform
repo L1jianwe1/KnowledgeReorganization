@@ -1,0 +1,45 @@
+  CSS3 Transform  详细介绍
+  
+属性：
+ transform:rotate();
+   旋转，度数（deg）
+   rotateX(angle)
+   rotateY(angle)
+   rotateZ(angle)
+ 
+ 
+ transform:skew();
+   倾斜，度数（deg）
+   skewX(angle)
+   skewY(angle)
+   skewZ(angle)
+ 
+ 
+ transform:scale();
+   缩放，缩放倍数(例如：1.5)
+   scaleX()
+   scaleY()
+   scaleZ()
+   
+ 
+ transform:translate();
+   平移,像素（px）
+   translateX()
+   translateY()
+   translateZ()
+   
+   
+transform 3D转换
+  transform-style: preserve-3d   //（3D透视）
+  perspective:Npx   //定义透视（px）
+
+来一个例子：
+  3D旋转木马
+     结构如下：
+     舞台（perspective:px）
+         容器(transform-style:perserve-3d)
+             内容(transform:rotateY() translateZ())
+  
+   
+   
+   
