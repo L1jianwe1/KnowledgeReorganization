@@ -1,0 +1,54 @@
+css3 animation
+
+属性：
+ animation-name:需要绑定到选择器的 keyframe 名称   默认none
+ 
+ animation-duration:完成动画所花费的时间  默认0
+ 
+ animation-timing-function:动画的速度曲线  默认ease
+ 
+ animation-delay:动画开始之前的延迟  默认0
+ 
+ animation-iteration-count:动画应该播放的次数  默认1
+ 
+ animation-direction:是否应该轮流反向播放动画  默认normal
+ 
+ 注：animation-iteration-count: n|infinite;   
+         n:播发次数的数值
+         infinite:无限次播放
+     
+     animation-direction: normal|alternate;
+         normal:正常播放
+         alternate:轮流反向播放
+ 
+ 语法：
+     animation: name duration timing-function delay iteration-count direction;
+     
+     
+     
+animation动画由“keyframes”这个属性来实现
+  keyframes语法规则:
+       @keyframes 动画名称 { ...}
+  
+  具体语法实现：
+       1.from  ...   to
+       @keyframes NAME {//NAME为动画名称 ， 可随意命名。
+           from{//相当于0%
+               //css属性放在这里
+           }
+           percentage{//这是一个百分比值，可以添加多个
+           }
+           to{//相当于100%
+           }
+       }
+       
+       2.全由百分比组成的方式
+       @keyframes NAME {
+           0%{//相当于0%
+               //css属性放在这里
+           }
+           percentage{//这是一个百分比值，可以添加多个
+           }
+           100%{//相当于100%
+           }
+       }
